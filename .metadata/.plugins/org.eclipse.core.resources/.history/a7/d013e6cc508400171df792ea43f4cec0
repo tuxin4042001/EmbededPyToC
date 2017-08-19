@@ -1,0 +1,21 @@
+/*
+ ============================================================================
+ Name        : _001_embededPyToC.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include </usr/include/python2.7/Python.h>
+
+int main(int argc, char *argv[]) {
+
+
+	printf("%.2f\n", Py_MATH_PI);
+
+	return 0;
+}

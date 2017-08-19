@@ -1,0 +1,18 @@
+10:04:47 **** Incremental Build of configuration Debug for project Hello ****
+make all 
+Building file: ../src/Hello.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Hello.d" -MT"src/Hello.o" -o "src/Hello.o" "../src/Hello.c"
+../src/Hello.c:14:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void) {
+      ^
+Finished building: ../src/Hello.c
+ 
+Building target: Hello
+Invoking: GCC C Linker
+gcc  -o "Hello"  ./src/Hello.o   
+Finished building target: Hello
+ 
+
+10:04:47 Build Finished (took 301ms)
+

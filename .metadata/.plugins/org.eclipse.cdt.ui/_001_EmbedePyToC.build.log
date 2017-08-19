@@ -1,0 +1,12 @@
+12:20:10 **** Incremental Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+../src/_001_EmbedePyToC.c:13:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/_001_EmbedePyToC.o' failed
+make: *** [src/_001_EmbedePyToC.o] Error 1
+
+12:20:11 Build Finished (took 93ms)
+

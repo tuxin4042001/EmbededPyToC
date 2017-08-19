@@ -1,0 +1,627 @@
+
+**** Build of configuration Debug for project EmbededPython ****
+
+Nothing to build for project EmbededPython
+
+**** Build of configuration Debug for project EmbededPython ****
+
+Nothing to build for project EmbededPython
+10:02:36 **** Build of configuration Debug for project Hello ****
+make all 
+Building file: ../src/Hello.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Hello.d" -MT"src/Hello.o" -o "src/Hello.o" "../src/Hello.c"
+Finished building: ../src/Hello.c
+ 
+Building target: Hello
+Invoking: GCC C Linker
+gcc  -o "Hello"  ./src/Hello.o   
+Finished building target: Hello
+ 
+10:02:40 **** Incremental Build of configuration Debug for project Hello ****
+make all 
+make: Nothing to be done for 'all'.
+10:04:47 **** Incremental Build of configuration Debug for project Hello ****
+make all 
+Building file: ../src/Hello.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Hello.d" -MT"src/Hello.o" -o "src/Hello.o" "../src/Hello.c"
+../src/Hello.c:14:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void) {
+      ^
+Finished building: ../src/Hello.c
+ 
+Building target: Hello
+Invoking: GCC C Linker
+gcc  -o "Hello"  ./src/Hello.o   
+Finished building target: Hello
+ 
+
+**** Build of configuration Debug for project test ****
+
+Nothing to build for project test
+10:07:44 **** Build of configuration Debug for project test ****
+make all 
+Building file: ../src/test.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+Finished building: ../src/test.c
+ 
+Building target: test
+Invoking: GCC C Linker
+gcc  -o "test"  ./src/test.o   
+Finished building target: test
+ 
+10:07:48 **** Incremental Build of configuration Debug for project test ****
+make all 
+make: Nothing to be done for 'all'.
+11:10:48 **** Build of configuration Debug for project cTest ****
+make all 
+Building file: ../src/cTest.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cTest.d" -MT"src/cTest.o" -o "src/cTest.o" "../src/cTest.c"
+Finished building: ../src/cTest.c
+ 
+Building target: cTest
+Invoking: GCC C Linker
+gcc  -o "cTest"  ./src/cTest.o   
+Finished building target: cTest
+ 
+11:10:59 **** Incremental Build of configuration Debug for project cTest ****
+make all 
+make: Nothing to be done for 'all'.
+11:52:49 **** Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+Finished building: ../src/_001_EmbedePyToC.c
+ 
+Building target: _001_EmbedePyToC
+Invoking: GCC C Linker
+gcc  -o "_001_EmbedePyToC"  ./src/_001_EmbedePyToC.o   
+Finished building target: _001_EmbedePyToC
+ 
+11:53:29 **** Incremental Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+../src/_001_EmbedePyToC.c:13:20: fatal error: Python.h: No such file or directory
+src/subdir.mk:18: recipe for target 'src/_001_EmbedePyToC.o' failed
+compilation terminated.
+make: *** [src/_001_EmbedePyToC.o] Error 1
+11:57:28 **** Incremental Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+../src/_001_EmbedePyToC.c:13:20: fatal error: Python.h: No such file or directory
+src/subdir.mk:18: recipe for target 'src/_001_EmbedePyToC.o' failed
+compilation terminated.
+make: *** [src/_001_EmbedePyToC.o] Error 1
+11:58:47 **** Incremental Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+../src/_001_EmbedePyToC.c:13:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/_001_EmbedePyToC.o' failed
+make: *** [src/_001_EmbedePyToC.o] Error 1
+12:20:10 **** Incremental Build of configuration Debug for project _001_EmbedePyToC ****
+make all 
+Building file: ../src/_001_EmbedePyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_EmbedePyToC.d" -MT"src/_001_EmbedePyToC.o" -o "src/_001_EmbedePyToC.o" "../src/_001_EmbedePyToC.c"
+../src/_001_EmbedePyToC.c:13:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/_001_EmbedePyToC.o' failed
+make: *** [src/_001_EmbedePyToC.o] Error 1
+13:38:43 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+13:39:37 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+makefile:30: recipe for target '_001_embededPyToC' failed
+13:44:48 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+../src/_001_embededPyToC.c:13:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+make: *** [src/_001_embededPyToC.o] Error 1
+src/subdir.mk:18: recipe for target 'src/_001_embededPyToC.o' failed
+13:50:53 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+13:54:56 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+13:57:32 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:02:14 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:02:31 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:02:36 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:02:52 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:03:06 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:03:19 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:03:30 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:03:53 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:05:46 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+Finished building target: _001_embededPyToC
+ 
+14:07:09 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+Finished building target: _001_embededPyToC
+ 
+14:12:09 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:18:51 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l"-I/usr/include/python2.7\ -lpython2.7"
+/usr/bin/ld: cannot find -l-I/usr/include/python2.7\ -lpython2.7
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:21:57 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L/usr/lib/python2.7/ -L/usr/include/python2.7/ -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:22:19 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:22:22 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L/usr/lib/python2.7/ -L/usr/include/python2.7/ -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:33:20 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:33:23 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"../" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:39:29 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"/usr/bin/python2.7-config --ldflags" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:42:19 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"/usr/bin/python2.7-config --ldflags" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:44:32 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:44:35 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L/usr/lib/python2.7/config-x86_64-linux-gnu -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:45:52 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:45:56 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L../-L/usr/lib/python2.7/config-x86_64-linux-gnu -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:47:24 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:47:27 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L/usr/lib/python2.7/config-x86_64-linux-gnu -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+14:52:07 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+14:52:12 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"../" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   
+./src/_001_embededPyToC.o: In function `main':
+makefile:30: recipe for target '_001_embededPyToC' failed
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:16: undefined reference to `Py_SetProgramName'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:17: undefined reference to `Py_Initialize'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:18: undefined reference to `PyRun_SimpleStringFlags'
+/home/xin/eclipse-workspace/_001_embededPyToC/Debug/../src/_001_embededPyToC.c:20: undefined reference to `Py_Finalize'
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:12:44 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7/config-x86_64-linux-gnu
+/usr/bin/ld: cannot find -l/usr/lib/python2.7/config-x86_64-linux-gnu
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:13:28 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7/config-x86_64-linux-gnu
+/usr/bin/ld: cannot find -l/usr/lib/python2.7/config-x86_64-linux-gnu
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:14:16 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7/config-x86_64-linux-gnu
+/usr/bin/ld: cannot find -l/usr/lib/python2.7/config-x86_64-linux-gnu
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:15:30 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l-L/usr/lib/python2.7/config-x86_64-linux-gnu
+/usr/bin/ld: cannot find -l-L/usr/lib/python2.7/config-x86_64-linux-gnu
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:22:18 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+15:22:22 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so
+/usr/bin/ld: cannot find -l/usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:23:26 **** Clean-only build of configuration Debug for project _001_embededPyToC ****
+make clean 
+rm -rf  ./src/_001_embededPyToC.o  ./src/_001_embededPyToC.d  _001_embededPyToC
+ 
+15:23:31 **** Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -I/usr/include/python2.7 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l""
+gcc: error: missing argument to ‘-l’
+makefile:30: recipe for target '_001_embededPyToC' failed
+make: *** [_001_embededPyToC] Error 1
+15:24:36 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"../" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l""
+gcc: error: missing argument to ‘-l’
+make: *** [_001_embededPyToC] Error 1
+makefile:30: recipe for target '_001_embededPyToC' failed
+15:43:49 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building file: ../src/_001_embededPyToC.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/_001_embededPyToC.d" -MT"src/_001_embededPyToC.o" -o "src/_001_embededPyToC.o" "../src/_001_embededPyToC.c"
+Finished building: ../src/_001_embededPyToC.c
+ 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc -L"../" -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7
+/usr/bin/ld: cannot find -l/usr/lib/python2.7
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+15:44:08 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7
+/usr/bin/ld: cannot find -l/usr/lib/python2.7
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1

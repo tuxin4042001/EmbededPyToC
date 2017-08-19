@@ -1,0 +1,12 @@
+15:44:08 **** Incremental Build of configuration Debug for project _001_embededPyToC ****
+make all 
+Building target: _001_embededPyToC
+Invoking: GCC C Linker
+gcc  -o "_001_embededPyToC"  ./src/_001_embededPyToC.o   -l/usr/lib/python2.7
+/usr/bin/ld: cannot find -l/usr/lib/python2.7
+makefile:30: recipe for target '_001_embededPyToC' failed
+collect2: error: ld returned 1 exit status
+make: *** [_001_embededPyToC] Error 1
+
+15:44:09 Build Finished (took 134ms)
+

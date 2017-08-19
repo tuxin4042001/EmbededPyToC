@@ -1,0 +1,21 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/xin/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/_002_PythonTest/com.python.pydev.analysis/v2_indexcache
+_002_PythonTest.multiply|1503100610000000000|/home/xin/eclipse-workspace/_002_PythonTest/_002_PythonTest/multiply.py
+_004_PythonTest.__init__|1503172202000000000|/home/xin/eclipse-workspace/_002_PythonTest/_004_PythonTest/__init__.py
+_003_PythonTest.numpy|1503163023000000000|/home/xin/eclipse-workspace/_002_PythonTest/_003_PythonTest/numpy.py
+_002_PythonTest.__init__|1503100533000000000|/home/xin/eclipse-workspace/_002_PythonTest/_002_PythonTest/__init__.py
+_003_PythonTest.__init__|1503162930000000000|/home/xin/eclipse-workspace/_002_PythonTest/_003_PythonTest/__init__.py
+_004_PythonTest.my_python|1503172202000000000|/home/xin/eclipse-workspace/_002_PythonTest/_004_PythonTest/my_python.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=_002_PythonTest.multiply
+-- END DICTIONARY
+-- START TREE 1
+1
+mul|1|multiply!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

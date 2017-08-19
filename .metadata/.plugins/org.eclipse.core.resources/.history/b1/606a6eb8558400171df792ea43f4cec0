@@ -1,0 +1,22 @@
+/*
+ ============================================================================
+ Name        : _001_embededPyToC.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include </usr/include/python2.7/Python.h>
+
+int main(int argc, char *argv[]) {
+	Py_SetProgramName(argv[0]); /* optional but recommended */
+	Py_Initialize();
+	PyRun_SimpleString("from time import time,ctime\n"
+			"print 'Today is',ctime(time())\n");
+	Py_Finalize();
+	return 0;
+}
