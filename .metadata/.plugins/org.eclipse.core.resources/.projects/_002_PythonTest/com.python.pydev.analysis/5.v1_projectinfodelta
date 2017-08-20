@@ -1,0 +1,10 @@
+INSTUP_002_PythonTest.multiply
+/home/xin/eclipse-workspace/_002_PythonTest/_002_PythonTest/multiply.py
+INFOS:&&2|1|2|0&&2|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|7|2|0
+output_len=6
+output_array=7
+_002_PythonTest.multiply=2
+input_len=4
+input_array=5
+stringTrans=3
+multiply=1

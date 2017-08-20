@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 				if (!pValue) {
 					Py_DECREF(pArgs);
 					Py_DECREF(pModule);
-					fprintf(stderr, "Cannot convert argument\n");
+					fprintf(stderr, "Cannot convert./ argument\n");
 					return 1;
 				}
 				/* pValue reference stolen here: */
