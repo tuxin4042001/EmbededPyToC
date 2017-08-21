@@ -12,64 +12,103 @@
 #include <stdlib.h>
 #include </usr/include/python2.7/Python.h>
 
-int main(int argc, char *argv[]) {
-	PyObject *pName, *pModule, *pDict, *pFunc;
-	PyObject *pArgs, *pValue;
-	int i;
+#define MAX_SIZE 8
 
-	if (argc < 3) {
-		fprintf(stderr, "Usage: call pythonfile funcname [args]\n");
-		return 1;
+int my_py(unsigned int input_len, char *input_str, unsigned int *output_len, char *output_str);
+
+int main()
+{
+	//initialize the parameters
+	char input_str[MAX_SIZE] = {'1', '0', '1', '1', '0', '1', '\0'};
+	char output_str[MAX_SIZE];
+	unsigned int output_len;
+	int is_ok;
+
+	printf("\n");
+	printf("input string is %s, length is %lu\n\n", input_str, strlen(input_str));
+
+	is_ok = my_py(strlen(input_str), input_str, &output_len, output_str);
+
+	if (is_ok == 1)
+	{
+		printf("output string is %s, length is %lu\n", output_str, strlen(output_str));
 	}
 
+	return is_ok;
+}
+
+int my_py(unsigned int input_len, char *input_str, unsigned int *output_len, char *output_str)
+{
+	char *output_str_after_python;
+	PyObject *pName, *pModule, *pDict, *pFunc;
+	PyObject *pArgs, *pValue, *result;
+
 	Py_Initialize();
-	pName = PyString_FromString(argv[1]);
+	pName = PyString_FromString("my_python");
 	/* Error checking of pName left out */
 
 	pModule = PyImport_Import(pName);
 	Py_DECREF(pName);
 
-	if (pModule != NULL) {
-		pFunc = PyObject_GetAttrString(pModule, argv[2]);
+	if (pModule != NULL)
+	{
+		pFunc = PyObject_GetAttrString(pModule, "stringTrans");
 		/* pFunc is a new reference */
 
-		if (pFunc && PyCallable_Check(pFunc)) {
-			pArgs = PyTuple_New(argc - 3);
-			for (i = 0; i < argc - 3; ++i) {
-				pValue = PyInt_FromLong(atoi(argv[i + 3]));
-				if (!pValue) {
-					Py_DECREF(pArgs);
-					Py_DECREF(pModule);
-					fprintf(stderr, "Cannot convert./ argument\n");
-					return 1;
-				}
-				/* pValue reference stolen here: */
-				PyTuple_SetItem(pArgs, i, pValue);
-			}
-			pValue = PyObject_CallObject(pFunc, pArgs);
+		if (pFunc && PyCallable_Check(pFunc))
+		{
+			pValue = PyString_FromString(input_str);
+			printf("Use python c api PyString_FromString transfer the c string to python object string, pValue is: \n");
+			PyObject_Print(pValue, stdout, 0);
+			printf("\n\n");
+
+			pArgs = PyTuple_New(1);
+			PyTuple_SetItem(pArgs, 0, pValue);
+
+			result = PyObject_CallObject(pFunc, pArgs);
+			printf("Use python c api PyObject_CallObject call python function, after python function the result is: \n");
+			PyObject_Print(result, stdout, 0);
+			printf("\n\n");
 			Py_DECREF(pArgs);
-			if (pValue != NULL) {
-				printf("Result of call: %ld\n", PyInt_AsLong(pValue));
-				Py_DECREF(pValue);
-			} else {
+			if (result != NULL)
+			{
+				output_str_after_python = PyString_AsString(result);
+				printf("After python function, use python c api PyString_AsString transfer python string to c string, output_str_after_python is: \n%s", output_str_after_python);
+				printf("\n\n");
+				Py_DECREF(result);
+
+				int output_str_after_python_len = strlen(output_str_after_python);
+				int i;
+				for(i = 0; i < output_str_after_python_len; i++){
+					output_str[i] = output_str_after_python[i];
+				}
+				output_str[i] = '\0';
+				*output_len = i;
+			}
+			else
+			{
 				Py_DECREF(pFunc);
 				Py_DECREF(pModule);
 				PyErr_Print();
 				fprintf(stderr, "Call failed\n");
-				return 1;
+				return 0;
 			}
-		} else {
+		}
+		else
+		{
 			if (PyErr_Occurred())
 				PyErr_Print();
-			fprintf(stderr, "Cannot find function \"%s\"\n", argv[2]);
+			fprintf(stderr, "Cannot find function");
 		}
 		Py_XDECREF(pFunc);
 		Py_DECREF(pModule);
-	} else {
+	}
+	else
+	{
 		PyErr_Print();
-		fprintf(stderr, "Failed to load \"%s\"\n", argv[1]);
-		return 1;
+		fprintf(stderr, "Failed to load");
+		return 0;
 	}
 	Py_Finalize();
-	return 0;
+	return 1;
 }

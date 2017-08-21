@@ -1,0 +1,2236 @@
+************************************************
+JAVA SCRIPT TIPS
+************************************************
+1.[javascript tips]how to get several minutes ago date and several seconds date?
+http://www.w3school.com.cn/jsref/jsref_obj_date.asp
+
+let now = new Date(Date.now());
+////////////////////////////////////////
+//      GET XMIN AGO
+////////////////////////////////////////
+let howLongAgoMin = 60;
+let xMinAgo = new Date(now);
+xMinAgo.setMinutes(xMinAgo.getMinutes() - howLongAgoMin);
+console.log("Hour: " + xMinAgo.getHours() + " Minute: " + xMinAgo.getMinutes());
+
+////////////////////////////////////////
+//      GET XSEC AGO
+////////////////////////////////////////
+let howLongAgoSec = 3600;
+let xSecAgo = new Date(now);
+xSecAgo.setSeconds(xSecAgo.getSeconds() - howLongAgoSec);
+console.log("Hour: " + xSecAgo.getHours() + " Minute: " + xSecAgo.getMinutes() + " Second: " + xSecAgo.getSeconds());
+
+2.[javascript tips]How to change an array to a object, key equals to one field in the arary?
+let array = [{firstname: "xin tu", id: 1}, {firstname: "yang yue", id:2}];
+console.log(array[0].id);
+console.log(array[1].id);
+
+let obj = {};
+for(let key in array){
+  obj[array[key].id] = array[key];
+}
+console.log(obj);
+
+3.[Javascript tips]How to calculate the diff between two Date in minutes?
+function averagesPushNull(averages, average, timestamp1, timestamp2) {
+    let time1 = timestamp1.getTime();
+    let time2 = timestamp2.getTime();
+    let timediff = (time1 - time2) / 60000;
+    // console.log(time1);
+    // console.log(time2);
+    // console.log(timediff);
+    let insertNullNum = timediff - 1;
+    for (let i = 0; i < insertNullNum; i++) {
+        averages.push(null);
+    }
+    averages.push(average);
+}
+
+4.[Javascript tips]How to iteration the javascript object?
+var zhangsan={}
+zhangsan.name = "张三";
+zhangsan.sex = "男";
+zhangsan.say = function(){
+        return "嗨！大家好，我来了。";
+    }
+zhangsan.contact = {
+    tel : "029-81895644",
+    qq : "1370753465",
+    email : "itxueyuan@gmail.com"
+}
+var strTem="";  // 临时变量
+for(value in zhangsan){
+   strTem+=value+'：'+zhangsan[value]+"\n";
+}
+alert(strTem);
+
+5.[javascript tips]How to determine an object is undefined or not?
+//////////////////////////////////////////////////////////////
+//How to determine a javascript object is undefined and null
+//////////////////////////////////////////////////////////////
+let obj1; //obj1 is undefined
+//method 1: typeof obj1 === 'undefined'
+if(typeof obj1 === 'undefined'){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+//method 2: !obj1
+if(!obj1){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+
+let obj2 = null;
+if(typeof obj2 === 'undefined'){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+
+if(!obj1){
+  console.log('null');
+}else{
+  console.log('not null');
+}
+
+//结论,typeof obj === 'undefined'可以用来判断'undefined', !obj可以用来判断'undefined'以及'null'
+
+6.[javascript tips]How to determine whether a number is an integer?
+http://www.cnblogs.com/snandy/p/3824828.html
+二、使用Math.round、Math.ceil、Math.floor判断
+整数取整后还是等于自己。利用这个特性来判断是否是整数，Math.floor示例，如下
+function isInteger(obj) {
+    return Math.floor(obj) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+这个直接把字符串，true，[]屏蔽了，代码量比上一个函数还少。
+
+三、通过parseInt判断
+function isInteger(obj) {
+    return parseInt(obj, 10) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+很不错，但也有一个缺点
+
+isInteger(1000000000000000000000) // false
+竟然返回了false，没天理啊。原因是parseInt在解析整数之前强迫将第一个参数解析成字符串。这种方法将数字转换成整型不是一个好的选择。
+
+四、通过位运算判断
+function isInteger(obj) {
+    return (obj | 0) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+这个函数很不错，效率还很高。但有个缺陷，上文提到过，位运算只能处理32位以内的数字，对于超过32位的无能为力，如
+
+isInteger(Math.pow(2, 32)) // 32位以上的数字返回false了
+当然，多数时候我们不会用到那么大的数字。
+
+五、ES6提供了Number.isInteger
+Number.isInteger(3) // true
+Number.isInteger(3.1) // false
+Number.isInteger('') // false
+Number.isInteger('3') // false
+Number.isInteger(true) // false
+Number.isInteger([]) // false
+
+************************************************
+Python TIPS
+************************************************
+1.[python tips]python environment deployment:
+http://www.runoob.com/python/python-install.html
+1.1 python 2.7.13 download:
+url:https://www.python.org/downloads/source/
+		   
+1.2 uncompress the tar.xz file:
+cd Downloads
+$xz -d Python-2.7.13.tar.xz
+$tar -xvf Python-2.7.13.tar
+
+1.3 run ./configure
+
+1.4 make
+
+1.5 sudo make install
+	
+1.6 set path:
+export PATH="$PATH:/usr/local/bin/python" or PATH="$PATH:/usr/local/bin/python"
+
+1.7 check the python version:
+python -V
+
+2.[python tips]How to install pycharm IDE?
+https://confluence.jetbrains.com/display/PYH/Installing+PyCharm+on+Linux+according+to+FHS
+3.1 pycharm-community-2017.2.1.tar.gz
+3.2 sudo mv pycharm-community-2017.2.1.tar.gz /opt/
+3.3 cd /opt/
+3.4 sudo tar -xzvf /opt/pycharm-community-2017.2.1.tar.gz
+3.5 sudo rm pycharm-community-2017.2.1.tar.gz
+3.6 bin/pycharm.sh
+
+3.[python tips]How to run python script?
+$ chmod +x test.py     # 脚本文件添加可执行权限
+$ ./test.py
+
+4.[python tips]How to install eclipse as the IDE for python?
+https://www.youtube.com/watch?v=NDFbXIiqT4o
+
+5.[python tips]How to embeded python in c?
+3.1 #include </usr/include/python2.7/Python.h>
+3.2 gcc _001_embededPyToC.c $(/usr/bin/python2.7-config --ldflags)
+
+6.[python tips]How swap python2 to python3?
+1.1 uninstall python2
+sudo apt-get remove python
+1.2 install python3
+sudo apt-get install python3
+1.3 upgrade python2 to python3
+http://imshusheng.com/python/213.html
+python -V
+cd /usr/local/src/
+wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+tar -zxvf Python-3.5.1.tgz
+cd Python-3.5.1
+./configure --prefix=/usr/local/python3
+make && make install
+mv /usr/bin/python /usr/bin/python2.6.6
+ln -s /usr/local/python3/bin/python3  /usr/bin/python
+1.4 install pip3 and install numpy under python3
+apt install python3-pip
+pip3 install numpy
+1.5 install pip3 and install scipy under python3
+apt install python3-pip
+pip3 install numpy
+
+************************************************
+C/C++ TIPS
+************************************************
+1.[c/c++ tips]How to install eclipse as the IDE for C/C++?
+1.1 Eclipse安装:
+http://blog.topspeedsnail.com/archives/4813
+1.2 Eclipse下CDT安装：
+http://blog.csdn.net/typa01_kk/article/details/49252513
+1.3 Eclipse Youtube安装视频：
+https://www.youtube.com/watch?v=3r5BWb_MUxA
+1.4 Eclipse安装完成问号图标：
+http://www.linuxdiyf.com/linux/24703.html
+vi .local/share/applications/eclipse.desktop
+		   
+[Desktop Entry]
+Name=Eclipse
+Type=Application
+Exec=/home/xin/eclipse/cpp-oxygen/eclipse/eclipse
+Terminal=false
+Icon=/home/xin/eclipse/cpp-oxygen/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse
+
+************************************************
+AngularJS TIPS
+************************************************
+1.[AngularJS 1.x tips]Angularjs 1.x learning guide:
+https://www.gitbook.com/book/hairui219/learning_angular/details
+
+2.[angularjs tips]Angularjs binding?
+http://www.angularjs.cn/A0a6
+$scope.$watch
+$scope.$digest
+$scope.$apply
+
+3.[angularjs tips]Funtion parameters?
+function(arg1, arg2, arg3) === function(arg1, arg2, arg3, arg4) the same, if you didn't pass through the arg4 to function. It is set the default value: undefined.
+However, if you want to use function, you should pass more args to it. Less args will cause fault.
+
+************************************************
+GIT TIPS
+************************************************
+1.[git tips]Ignore the untracked file in git
+https://stackoverflow.com/questions/11542687/git-how-to-ignore-all-present-untracked-files
+git status -uno  # must be "-uno" , not "-u no"
+git status --porcelain | grep '^??' | cut -c4- >> .gitignore
+
+Another method:
+if you don't need this file, just rm -rf <file>, then you will ignore it with git status
+rm -rf <file>
+	
+2.[git tips]How to cherry-pick update the release branch?
+The keypoint is: use pull request to group the commit for each single isuue one time.
+So you can just cherry-pick the relevant commit in the PR.
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #272
+////////////////////////////////////////////////
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/87/diff
+* 08ed850 - (HEAD -> release-v1.0.0) [20170814 Xin Tu]#272 modification according to comment (3 minutes ago) <Xin>
+* ea12472 - [20170813 Xin Tu]#272 remove the datatable css from index.html (4 minutes ago) <tx4042001>
+* ad1bd73 - [20170813 Xin Tu]#272 Add jquery datatable css (4 minutes ago) <tx4042001>
+* 27d3a67 - [20170813 Xin Tu]#272 Fix the datatable not responsive problem, 0000000000004 swap to 000000000 (5 minutes ago) <tx4042001>
+* 6350b7e - [20170812 Xin Tu]Expand the displayLength and forwarding to devicetable page after editing (6 minutes ago) <Xin>
+
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #282
+////////////////////////////////////////////////
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/89/diff#site/app/3Dmap/index.js
+* 1dfdfd1 - (HEAD -> release-v1.0.0) [20170814 Xin Tu]#282 change the sceneViewService.initPopup back to initPopup (4 seconds ago) <Xin>
+* 1748768 - [20170814 Xin Tu]#282 modify according to gulp test (37 seconds ago) <Xin>
+* 90bfce3 - [20170814 Xin Tu]#282 move createNewDatatablePopup and createNewEsriPopup into sceneViewService (73 seconds ago) <Xin>
+* 0e88b16 - [20170814 Xin Tu]#282 refactor createNewPopup, separate it into createNewDataTablePopup and createNewEsriPopup (89 seconds ago) <Xin>
+* 90aaf6e - [20170814 Xin Tu]#282 fix the dataTable plugbase popup cannot turn on turn off issue (2 minutes ago) <Xin>
+
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #271
+////////////////////////////////////////////////		 
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/88/commits
+* 156afa7 - (HEAD -> release-v1.0.0) [Jinwen] Move AppID out of dataFactory.service.js. (7 seconds ago) <Jinwen Zhang>
+
+3.[git tips]How to roll back the unnecessary git add . and git commit -m ?
+3.1 rollback the git add .?
+git checkout .
+3.2 rollback the git commit -m ?
+git reset HEAD~  //remove the latest commit
+git reset
+git reset HEAD这条命令用来废除这次修改的记录，当前文件回到上一次提交的状态。
+git reset --hard [commit版本号]
+
+4.[git tips]How to set a config of git log alias?
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+************************************************
+LINUX TIPS
+************************************************
+1.[linux tips]12 Useful “df” Commands to Check Disk Space in Linux
+https://www.tecmint.com/how-to-check-disk-space-in-linux/
+df
+df -h
+
+2.[linux tips]How to find a process and kill it under linux?
+[web blog]http://blog.csdn.net/zhshow/article/details/6042338
+ps aux | grep [process name]
+kill [process pid]
+
+3.[linux tips]How to collect the server system info?
+xueyang [2:56 PM] 
+a.list all the system infomation:
+lspci
+
+lspci | egrep -i --color 'network|ethernet'
+
+lshw -class network
+
+b.list the route and gateway information:
+route -n
+
+c.list the cpu and memory information:
+cat /proc/cpuinfo
+cat /proc/meminfo
+
+d.list the harddisk information:
+hdparm -I /dev/sda
+
+lshw -class disk -class storage'
+
+e.list php information:
+php --version
+
+4.[linux tips]How to check if the specific listening port have been used?
+lsof -i | grep 9002
+
+5.[linux tips]How to delete the process used the specific listening port?
+kill -9 $(netstat -tlnp|grep 9002|awk '{print $7}'|awk -F '/' '{print $1}')
+
+6.[linux tips]How to check the system performance?
+http://www.infoq.com/cn/news/2015/12/linux-performance
+5.1 uptime
+$ uptime
+23:51:26 up 21:31,  1 user,  load average: 30.02, 26.43, 19.02
+这个命令可以快速查看机器的负载情况。在Linux系统中，这些数据表示等待CPU资源的进程和阻塞在不可中断IO进程（进程状态为D）的数量。这些数据可以让我们对系统资源使用有一个宏观的了解。
+
+5.2 dmesg | tail
+该命令会输出系统日志的最后10行。示例中的输出，可以看见一次内核的oom kill和一次TCP丢包。这些日志可以帮助排查性能问题。千万不要忘了这一步。
+
+5.3 vmstat 1
+vmstat(8) 命令，每行会输出一些系统核心指标，这些指标可以让我们更详细的了解系统状态。后面跟的参数1，表示每秒输出一次统计信息，表头提示了每一列的含义，这几介绍一些和性能调优相关的列：
+
+5.4 mpstat -P ALL 1
+该命令可以显示每个CPU的占用情况，如果有一个CPU占用率特别高，那么有可能是一个单线程应用程序引起的。
+
+5.5 pidstat 1
+pidstat命令输出进程的CPU占用率，该命令会持续输出，并且不会覆盖之前的数据，可以方便观察系统动态。
+
+5.6 iostat -xz 1
+iostat命令主要用于查看机器磁盘IO情况。
+
+5.7 free –m
+free命令可以查看系统内存的使用情况，-m参数表示按照兆字节展示。最后两列分别表示用于IO缓存的内存数，和用于文件系统页缓存的内存数.
+
+5.8 sar -n DEV 1
+sar命令在这里可以查看网络设备的吞吐率。在排查性能问题时，可以通过网络设备的吞吐量，判断网络设备是否已经饱和。
+
+5.9 sar -n TCP,ETCP 1
+sar命令在这里用于查看TCP连接状态.
+
+5.10 top
+top命令包含了前面好几个命令的检查的内容。比如系统负载情况（uptime）、系统内存使用情况（free）、系统CPU使用情况（vmstat）等。因此通过这个命令，可以相对全面的查看系统负载的来源.
+
+7.[linux tips]Server Memory Check?
+admin@AS8:~$ cat /proc/meminfo
+MemTotal:       16308132 kB
+MemFree:          337108 kB
+MemAvailable:    1826988 kB
+Buffers:          264068 kB
+Cached:          1452512 kB
+SwapCached:         2204 kB
+Active:         13624096 kB
+Inactive:        1980064 kB
+Active(anon):   12766788 kB
+Inactive(anon):  1160092 kB
+Active(file):     857308 kB
+Inactive(file):   819972 kB
+Unevictable:           8 kB
+Mlocked:               8 kB
+SwapTotal:      16654332 kB
+SwapFree:       16502008 kB
+Dirty:               724 kB
+Writeback:             0 kB
+AnonPages:      13885956 kB
+Mapped:            82556 kB
+Shmem:             39280 kB
+Slab:             189156 kB
+SReclaimable:     141092 kB
+SUnreclaim:        48064 kB
+KernelStack:       47952 kB
+PageTables:        49304 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    24808396 kB
+Committed_AS:   37213692 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1417216 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      127940 kB
+DirectMap2M:     9185280 kB
+DirectMap1G:     9437184 kB
+
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 3.0 present.
+
+Handle 0x0029, DMI type 16, 23 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: Multi-bit ECC
+	Maximum Capacity: 512 GB
+	Error Information Handle: Not Provided
+	Number Of Devices: 8
+
+Handle 0x0034, DMI type 16, 23 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: Multi-bit ECC
+	Maximum Capacity: 512 GB
+	Error Information Handle: Not Provided
+	Number Of Devices: 8
+	
+8.linux tips]How to check matherboard information?
+sudo dmidecode -t 2
+
+9.[linux tips]How to deal with serveral screen situation?
+if there are several screen with then same name, you cannot open one of them.
+you need use command to kill all of them and then log in to the screen.
+screen -r pid-tty.name
+screen -r map_esri
+
+10.[linux tips]How to searh which file include a head file and where is the head file for c?
+grep -R --include="*.*" "pythonrun.h" /usr/include
+locate pythonrun.
+
+************************************************
+TRELLO TIPS
+************************************************
+1.[trello tips]Useful trello plugins?
+https://chrome.google.com/webstore/detail/card-colors-for-trello/nodlpencjjlohojddhflnahnfpfanbjm/related?hl=en
+
+https://chrome.google.com/webstore/detail/projects-for-trello/mholjhodapabhdbchonjjoecmfhobfoa/related?hl=en-GB
+
+https://chrome.google.com/webstore/detail/cardcounter-for-trello/miejdnaildjcmahbhmfngfdoficmkdhi/related?hl=en
+
+https://chrome.google.com/webstore/detail/trello-card-numbers/kadpkdielickimifpinkknemjdipghaf/related?hl=en
+chrome.google.com
+Card Colors for Trello
+Takes card label colors, either merge them or pick the first and add them to the entire card.
+ 
+chrome.google.com
+Projects for Trello
+Adds project labels to your Trello Boards
+ 
+chrome.google.com
+CardCounter for Trello
+Shows the number of cards in every list in Trello. Adds support for Kanban limits.
+ 
+chrome.google.com
+Trello Card Numbers
+Adds card numbers to a variety of places when using Trello.
+ 
+[4:46] 
+https://chrome.google.com/webstore/detail/slim-lists-for-trello/pjlejgbmijmafmobaofcgblpdbkaodod/related?hl=en
+chrome.google.com
+Slim Lists for Trello
+Shows you more lists in Trello by reducing the width of lists in Trello by up to 50%
+	
+************************************************
+2017.07.04
+************************************************
+1.#94 link 2D map with layerlist
+1.1 [chrome tips] how to clear all the break points in chrome?
+    --click the breakPoints button in the right-top;
+
+************************************************
+2017.07.06
+************************************************
+1.#168 Extend dashboard to support more applicationIDs
+1.1 [ES6 tips] how to use object and map to create a config file?
+--difference between object and map:
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map
+--object and map create and iteration?
+
+************************************************
+2017.07.10
+************************************************
+1. #178 Add a filter function to dash table device table info.(4)[4]
+1.1 how to add jquery datatable function to lora device dashtable?
+
+1.2 how to add filter function to dash table device table info?
+1.2.1 how to add filter for every column in device table?
+?source: https://datatables.net/examples/api/multi_filter_select.html?
+?local: http://207.34.103.155:57990/projects/FRON/repos/map_esri/pull-requests/24/diff#Appropolis_Map/site/app/controllers/dashboard/deviceTableController.js?
+################################################
+--deviceTableController.js--
+this.api().columns().every(function () {
+################################################
+1.2.2 how to add filter function to some specific columns?
+?source: https://datatables.net/examples/api/multi_filter_select.html?
+?local: http://207.34.103.155:57990/projects/FRON/repos/map_esri/pull-requests/24/commits/7e209acb77ac7e78bcbbb36dec869f581f664d87?
+################################################
+--deviceTableController.js--
+this.api().columns([3,4,5,6]).every(function () {
+################################################
+
+1.3 how to set the show entries to a default value in datatable?
+?source: https://legacy.datatables.net/ref#iDisplayLength?
+?local: http://207.34.103.155:57990/projects/FRON/repos/map_esri/pull-requests/24/diff#Appropolis_Map/site/app/controllers/dashboard/deviceTableController.js?
+################################################
+--deviceTableController.js--
+"iDisplayLength": 13,
+"lengthMenu": [[13, 26, 50, -1], [13, 26, 50, "All"]],
+################################################
+
+1.4 how to set the scrollX bar and scrollY bar, and provide the fix-header and fix-search fixe-pagination function?
+?source: https://datatables.net/examples/basic_init/scroll_xy.html?
+?local: http://207.34.103.155:57990/projects/FRON/repos/map_esri/pull-requests/24/commits/177c10952c5e9472399fd4938e28c3e8a41a32d6#Appropolis_Map/site/app/controllers/dashboard/deviceTableController.js?
+################################################
+--deviceTableController.js--
+"scrollY": 500,
+"scrollX": "100%",
+################################################
+
+1.5 how to set the fixed-column function to datatable?
+?source: https://datatables.net/extensions/fixedcolumns/?
+?lodal: http://207.34.103.155:57990/projects/FRON/repos/map_esri/pull-requests/24/commits/e70902c4c0b67ba95210e4a57221fe75de5b54bd#Appropolis_Map/site/app/controllers/dashboard/deviceTableController.js?
+################################################
+--deviceTableController.js--
+"fixedColumns": true,
+################################################
+
+************************************************
+2017.07.12
+************************************************
+1.#135 Go through all the codes and give improvement doc and add useful comments in codebase (6)[4]
+1.1 how to find a function to test?
+a.api.js ----route find the function;
+router.get("/:scenario_id/latest_gw_records/",                              apeFuncs.getLatestGatewayRecords);
+
+b.apeFunctions.js ----function find the model;
+ApeRecordFuncs.getLatestGatewayRecords = function(req, res, next) {
+
+[mongodb tips] mongodb manual set, mongodb commands?
+https://docs.mongodb.com/manual/reference/method/js-collection/
+db.collection().distinct():
+Finds the distinct values for a specified field across a single collection and returns the results in an array.
+Example:
+db.getCollection('gatewayrecords').distinct("gw_mac")
+[
+    "5C:31:3E:06:85:A4",
+    "5C:31:3E:06:85:C7",
+    "5C:31:3E:06:88:C6",
+    "5C:31:3E:06:8A:8F",
+    "5C:31:3E:06:88:A4",
+    "5C:31:3E:06:8A:A1",
+    "5C:31:3E:06:85:E0",
+    "5C:31:3E:06:88:E0",
+    "5C:31:3E:06:8A:91",
+    "5C:31:3E:06:87:7D",
+    "5C:31:3E:06:88:9F",
+    "5C:31:3E:06:85:97",
+    "5C:31:3E:06:83:47",
+    "5C:31:3E:06:88:B5",
+    "5C:31:3E:06:83:2F",
+    "5C:31:3E:06:85:FC",
+    "5C:31:3E:06:88:A6",
+    "5C:31:3E:06:8A:94",
+    "5C:31:3E:06:87:47",
+    "5C:31:3E:06:83:33",
+    "5C:31:3E:06:85:8A",
+    "5C:31:3E:06:88:C2",
+    "5C:31:3E:06:85:8E",
+    "5C:31:3E:06:85:93",
+    "5C:31:3E:06:88:BD",
+    "5C:31:3E:06:88:BC",
+    "5C:31:3E:06:85:89",
+    "5C:31:3E:06:85:87",
+    "5C:31:3E:06:88:C9",
+    "5C:31:3E:06:85:C0"
+]
+
+************************************************
+2017.07.13
+************************************************
+1.Implement web api unit test with mocha chai sinon (16)
+1.1 how to debugger in the back-end?
+node-inspector
+https://www.npmjs.com/package/node-inspector
+
+1.2 how to use sinon to write the javascript unit test?
+http://www.zcfy.cc/article/sinon-tutorial-javascript-testing-with-mocks-spies-stubs-422.html
+
+1.3 best practice for spies, stubs and mocks in Sinon.js
+https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js
+
+************************************************
+2017.07.14
+************************************************
+1.Unit Test Done:
+-----------------------Active Nodes------------------------------
+ApeRecordFuncs.getActiveNodes()
+ApeRecordFuncs.getNumActiveNodes()
+ApeRecordFuncs.getActiveNodesByMac()
+
+2.[git tips]cancel add, cancel the files have been added?
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+git reset HEAD test/activeNode.test.js
+
+************************************************
+2017.07.15
+************************************************
+1.plug base function add into next release.
+--query;
+--control;
+
+2.people detect device function add into next release.
+--query;
+
+saturday mornin will be a new release;
+
+3.ES6
+Arrows function (,) => {}
+Classes
+Promise
+
+4.create web api for plug-base
+4.1 webapi
+router.get("/lora/:devicetype/:application_id/currentstatus",   frontendDeviceFuncs.getDeviceStatus);
+
+4.2 frontendDeviceFuncs.getDeviceStatus ---> getNodeSessionsAndDevInfo, 根据req查找NodeSessions和DevInfo，关键是在哪里查？
+
+4.3 getNodeSessionsAndDevInfo ---> findDevEUIs, findDevEUIs ---> var AppServNodeSession = require("../../models/nodeSessionAppServ.js")(req.params.application_id, isDeviceCtrl);
+    去app_node_session查找nodesessions
+
+4.4 getNodeSessionsAndDevInfo ---> getDevInfo,  getDevInfo ---> var DeviceInfo = require("../../models/deviceInfo.js")(req.params.application_id, isDeviceCtrl);
+    去device_info查找deviceinfo
+     
+4.5 frontendDeviceFuncs.getDeviceStatus ---> getNodeSessionsAndDevInfo(req).then((resp, err), 根据req查找nodesessions信息和deviceinfo信息
+resp:
+{ nodeSessions:
+   [ { _id: 59682d698ab96a6df6480a38,
+       ApplicationID: [Object],
+       DevEUI: [Object],
+       AppEUI: [Object],
+       AppKey: [Object],
+       ABP: true,
+       IsClassC: true,
+       DevAddr: [Object],
+       NwkSKey: [Object],
+       AppSKey: [Object],
+       RelaxFCnt: true,
+       RxDelay: [Object],
+       Rx1DROffset: [Object],
+       Rx2DR: [Object],
+       ADRInterval: 0,
+       InstallationMargin: '5.000000',
+       UseAppSetting: true,
+       Name: [Object],
+       Description: [Object],
+       EncryptedMacCmds: '',
+       EncryptedMacCmdsPrev: '',
+       UnencryptedMacCmds: '',
+       UnencryptedMacCmdsPrev: 'sys set dpinmode 3 o pp;sys set dpinval 3 0;',
+       UserPayloadData: '',
+       HasEncryptedMacCmdDelivered: [Object],
+       HasUnencrytpedMacCmdDelivered: [Object],
+       HasUserPayloadDataDelivered: [Object],
+       UserPayloadDataLen: [Object] },
+     { _id: 596a9f008ab96a6df6a31cb0,
+       Name: [Object],
+       Description: [Object],
+       ApplicationID: [Object],
+       UseAppSetting: true,
+       AppEUI: [Object],
+       DevEUI: [Object],
+       AppKey: [Object],
+       ABP: true,
+       IsClassC: true,
+       DevAddr: [Object],
+       NwkSKey: [Object],
+       AppSKey: [Object],
+       RelaxFCnt: true,
+       RxDelay: [Object],
+       Rx1DROffset: [Object],
+       Rx2DR: [Object],
+       ADRInterval: 0,
+       InstallationMargin: '5',
+       EncryptedMacCmds: '',
+       EncryptedMacCmdsPrev: '',
+       UnencryptedMacCmds: '',
+       UnencryptedMacCmdsPrev: '',
+       UserPayloadData: '',
+       UserPayloadDataLen: [Object],
+       HasEncryptedMacCmdDelivered: [Object],
+       HasUnencrytpedMacCmdDelivered: [Object],
+       HasUserPayloadDataDelivered: [Object],
+       __v: 0 }]
+  deviceInfos:
+   [ { _id: 59498bfe38158aac38d07135,
+       devEUI: '3136470a1c003800',
+       devType: 'streetlight',
+       devCmds: [Object] },
+     { _id: 59498c1d38158aac38d0aace,
+       devEUI: '3136470A1D003E00',
+       devType: 'streetlight',
+       devCmds: [Object] },
+     { _id: 59543d4738158aac38b9bd1f,
+       devEUI: '313647092e003000',
+       devType: 'streetlight',
+       devCmds: [Object] } ] 
+}
+
+//转化为以devEUI为索引的一个map
+4.6: var devInfoLookup = getDevInfoLookupObj(resp.deviceInfos)， 将deviceInfos转化为以devEUI为索引的一个数组
+result:
+[object Object] {
+  313647092E003000: [object Object] {
+    _id: "d4738158aac38b9bd1f",
+    devCmds: "object",
+    devEUI: "313647092e003000",
+    devType: "streetlight"
+  },
+  3136470A1D003E00: [object Object] {
+    _id: "c1d38158aac38d0aace",
+    devCmds: "object",
+    devEUI: "3136470A1D003E00",
+    devType: "streetlight"
+  }
+}
+
+4.7 if(devInfoRecord.devType == req.params.devicetype) --->  getSpecificDeviceStatus(resp.nodeSessions[i], devInfoRecord), 根据devEUI找到数据后利用 getSpecificDeviceStatus返回状态
+
+4.8 getSpecificDeviceStatus ---> case "streetlight": / case "switcher":, 根据不同分支返回不同类型数据的状态
+function getSpecificDeviceStatus(node, deviceInfo) {
+    logger.debug("deviceInfo.devType =", deviceInfo.devType);
+    switch(deviceInfo.devType) {
+        case "streetlight":
+            return getStreetlightStatus(node, deviceInfo);
+        case "switcher":
+            return getSwitcherStatus(node, deviceInfo);
+        default:
+            logger.error("Error: deviceInfo.devType =", deviceInfo.devType);
+            return null;
+    }
+}
+
+4.9 getSpecificDeviceStatus ---> getStreetlightStatus(node, deviceInfo);
+
+//getStreetlightStatus, 根据状态转移方程转化状态，并返回状态
+function getStreetlightStatus(streetlight, deviceInfo) {
+    /*
+     * A device's status starts out as "Unknown". Then, to determine the status, we check the
+     * current and previous MAC commands fields, and whether or not they've been processed yet.
+     */
+    
+    logger.debug("Getting status for streetlight:", streetlight.DevEUI.toString("hex").toUpperCase());
+    var wasDelivered = (streetlight.HasUnencryptedMacCmdDelivered.toString("hex").toUpperCase() == "01") ? true : false;
+    var hasCurrCmd = (streetlight.UnencryptedMacCmds.length > 0) ? true : false;
+    var currCmds = (hasCurrCmd) ? streetlight.UnencryptedMacCmds.split(';') : "" ;
+    var lastCurrCmd = (currCmds.length > 1) ? currCmds[currCmds.length - 2] : "";
+    var statusWillBe = "Unknown";
+    if(lastCurrCmd == deviceInfo.devCmds[0].backendEquivalentPart2)  // On
+        statusWillBe = deviceInfo.devCmds[0].statusWillBe;
+    if(lastCurrCmd == deviceInfo.devCmds[1].backendEquivalentPart2)  // Off
+        statusWillBe = deviceInfo.devCmds[1].statusWillBe;
+    
+    var hasPrevCmd = (streetlight.UnencryptedMacCmdsPrev.length > 0) ? true : false;
+    var prevCmds = (hasPrevCmd) ? streetlight.UnencryptedMacCmdsPrev.split(';') : "";
+    var lastPrevCmd = (prevCmds.length > 1) ? prevCmds[prevCmds.length - 2] : "";
+    var statusIs = "Unknown";
+    if(lastPrevCmd == deviceInfo.devCmds[0].backendEquivalentPart2)  // On
+        statusIs = deviceInfo.devCmds[0].statusWillBe;
+    if(lastPrevCmd == deviceInfo.devCmds[1].backendEquivalentPart2)  // Off
+        statusIs = deviceInfo.devCmds[1].statusWillBe;
+
+    if(wasDelivered) {
+        if(hasCurrCmd) {
+            return statusWillBe;
+        } else {
+            return (hasPrevCmd) ? statusIs : "Error";
+        }
+    } else { // I.e.: Delivered == "01"
+        return (hasCurrCmd) ? "Waiting" : "Off";
+    }
+}
+
+5.javascript if(object)判断语句
+//非空字符串
+let test0 = "a";
+if(test0){
+  console.log("true");
+}else{
+  console.log("false");
+}
+
+//空字符串
+let test1 = "";
+if(test1){
+  console.log("true");
+}else{
+  console.log("false");
+}
+
+//空
+let test2 = unll;
+if(test2){
+  console.log("true");
+}else{
+  console.log("false");
+}
+
+//未定义
+if(test3){
+  console.log("true");
+}else{
+  console.log("false");
+}
+
+************************************************
+2017.07.16
+************************************************
+1.[Git Tips] how to deal with git bash response slowly?
+uninstall the intel graphic driver from 360
+
+2.agts_lora_app_0000000000000005 collection "deviceInfo" insert new document:
+[目前agts_lora_app_只能工作在生产环境下,不带test]
+新数据：
+--Device Info
+/* 1 */
+{
+    "_id" : ObjectId("596d2350b1beaf3d7391074b"),
+    "devEUI" : "003136470A1B001F00",
+    "devType" : "plugbase",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("596d238ab1beaf3d7391202e"),
+    "devEUI" : "313647092e003000",
+    "devType" : "streetlight",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("596d826fb1beaf3d73be5882"),
+    "devEUI" : "003933383355348303",
+    "devType" : "plugbase",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+--electricity_consumption
+/* 1 */
+{
+    "_id" : ObjectId("596d8196b1beaf3d73bdea68"),
+    "applicationID" : "0000000000000001",
+    "devEUI" : "003933383355348303",
+    "timestamp" : ISODate("2017-07-18T00:06:00.000Z"),
+    "parsedData" : [ 
+        {
+            "hasParsedData" : true,
+            "timeSecond" : 0,
+            "voltage" : 120.192542372881,
+            "current" : 0.111668661785585,
+            "power" : 0.445412572596447
+        }, 
+        {
+            "power" : 0.267698601299956,
+            "current" : 0.12561948530851,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 4,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.438330243264108,
+            "current" : 0.120899987190403,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 9,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.515975004692764,
+            "current" : 0.0567508586021144,
+            "voltage" : 119.786486486486,
+            "timeSecond" : 13,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.537399395405803,
+            "current" : 0.138999584170767,
+            "voltage" : 119.383164983165,
+            "timeSecond" : 17,
+            "hasParsedData" : true
+        }
+    ],
+    "rawData" : [ 
+        {
+            "timeSecond" : 0,
+            "payload" : "555A02E0B8000127003EAD0231445017E821CE4DF1F18D1E"
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD01F2EF5017E8383F88E1F18E3D",
+            "timeSecond" : 4
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD0206695017E8225A22F1F1917E",
+            "timeSecond" : 9
+        }, 
+        {
+            "payload" : "555A02E0B8000128003EAD0450675017E81D2EC7E1F1932F",
+            "timeSecond" : 13
+        }, 
+        {
+            "payload" : "555A02E0B8000129003EAD01C2E85017E81C04F1E1F19622",
+            "timeSecond" : 17
+        }
+    ],
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("596d84d9b1beaf3d73bf8d2e"),
+    "applicationID" : "0000000000000001",
+    "devEUI" : "003933383355348303",
+    "timestamp" : ISODate("2017-07-18T00:07:00.000Z"),
+    "parsedData" : [ 
+        {
+            "hasParsedData" : true,
+            "timeSecond" : 0,
+            "voltage" : 120.192542372881,
+            "current" : 0.111668661785585,
+            "power" : 0.445412572596447
+        }, 
+        {
+            "power" : 0.267698601299956,
+            "current" : 0.12561948530851,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 4,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.438330243264108,
+            "current" : 0.120899987190403,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 9,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.515975004692764,
+            "current" : 0.0567508586021144,
+            "voltage" : 119.786486486486,
+            "timeSecond" : 13,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.537399395405803,
+            "current" : 0.138999584170767,
+            "voltage" : 119.383164983165,
+            "timeSecond" : 17,
+            "hasParsedData" : true
+        }
+    ],
+    "rawData" : [ 
+        {
+            "timeSecond" : 0,
+            "payload" : "555A02E0B8000127003EAD0231445017E821CE4DF1F18D1E"
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD01F2EF5017E8383F88E1F18E3D",
+            "timeSecond" : 4
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD0206695017E8225A22F1F1917E",
+            "timeSecond" : 9
+        }, 
+        {
+            "payload" : "555A02E0B8000128003EAD0450675017E81D2EC7E1F1932F",
+            "timeSecond" : 13
+        }, 
+        {
+            "payload" : "555A02E0B8000129003EAD01C2E85017E81C04F1E1F19622",
+            "timeSecond" : 17
+        }
+    ],
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("596d87a5b1beaf3d73c0ec81"),
+    "applicationID" : "0000000000000001",
+    "devEUI" : "003933383355348303",
+    "timestamp" : ISODate("2017-07-18T00:10:00.000Z"),
+    "parsedData" : [ 
+        {
+            "hasParsedData" : true,
+            "timeSecond" : 0,
+            "voltage" : 120.192542372881,
+            "current" : 0.111668661785585,
+            "power" : 0.445412572596447
+        }, 
+        {
+            "power" : 0.267698601299956,
+            "current" : 0.12561948530851,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 4,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.438330243264108,
+            "current" : 0.120899987190403,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 9,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.515975004692764,
+            "current" : 0.0567508586021144,
+            "voltage" : 119.786486486486,
+            "timeSecond" : 13,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.537399395405803,
+            "current" : 0.138999584170767,
+            "voltage" : 119.383164983165,
+            "timeSecond" : 17,
+            "hasParsedData" : true
+        }
+    ],
+    "rawData" : [ 
+        {
+            "timeSecond" : 0,
+            "payload" : "555A02E0B8000127003EAD0231445017E821CE4DF1F18D1E"
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD01F2EF5017E8383F88E1F18E3D",
+            "timeSecond" : 4
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD0206695017E8225A22F1F1917E",
+            "timeSecond" : 9
+        }, 
+        {
+            "payload" : "555A02E0B8000128003EAD0450675017E81D2EC7E1F1932F",
+            "timeSecond" : 13
+        }, 
+        {
+            "payload" : "555A02E0B8000129003EAD01C2E85017E81C04F1E1F19622",
+            "timeSecond" : 17
+        }
+    ],
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("596d87c4b1beaf3d73c0fb02"),
+    "applicationID" : "0000000000000001",
+    "devEUI" : "003933383355348303",
+    "timestamp" : ISODate("2017-07-18T00:20:00.000Z"),
+    "parsedData" : [ 
+        {
+            "hasParsedData" : true,
+            "timeSecond" : 0,
+            "voltage" : 120.192542372881,
+            "current" : 0.111668661785585,
+            "power" : 0.445412572596447
+        }, 
+        {
+            "power" : 0.267698601299956,
+            "current" : 0.12561948530851,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 4,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.438330243264108,
+            "current" : 0.120899987190403,
+            "voltage" : 120.192542372881,
+            "timeSecond" : 9,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.515975004692764,
+            "current" : 0.0567508586021144,
+            "voltage" : 119.786486486486,
+            "timeSecond" : 13,
+            "hasParsedData" : true
+        }, 
+        {
+            "power" : 0.537399395405803,
+            "current" : 0.138999584170767,
+            "voltage" : 119.383164983165,
+            "timeSecond" : 17,
+            "hasParsedData" : true
+        }
+    ],
+    "rawData" : [ 
+        {
+            "timeSecond" : 0,
+            "payload" : "555A02E0B8000127003EAD0231445017E821CE4DF1F18D1E"
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD01F2EF5017E8383F88E1F18E3D",
+            "timeSecond" : 4
+        }, 
+        {
+            "payload" : "555A02E0B8000127003EAD0206695017E8225A22F1F1917E",
+            "timeSecond" : 9
+        }, 
+        {
+            "payload" : "555A02E0B8000128003EAD0450675017E81D2EC7E1F1932F",
+            "timeSecond" : 13
+        }, 
+        {
+            "payload" : "555A02E0B8000129003EAD01C2E85017E81C04F1E1F19622",
+            "timeSecond" : 17
+        }
+    ],
+    "__v" : 0
+}
+
+4.create a new web api and related the the function:
+// ---------------- PLUGBASE DEVICE CONSUMPTION -----------------------------------------------
+router.get("/:devicetype/:application_id/electricityconsumption", frontendDeviceFuncs.getDeviceConsumption);
+
+5.frontendDeviceFunctions.js create a new function to get device consumption information:
+feDeviceRoutingFuncs.getDeviceConsumption = function(req, res, next) ---> getDevInfo
+get the device information, especially devEUI and devicetype, if they are the same with params come from url, then continue
+
+6.if(devInfoLookup[devEUI] && devInfoLookup[devEUI].devType === devicetype){
+getSpecificDeviceConsumption ---> getPlugbaseConsumption
+
+************************************************
+2017.07.18
+************************************************
+1.create a function to get the device status:
+1.1 find all device devEUI in the agts_lora_app_0000000000000001;
+3136470A1D003E00
+3933383351348303
+3136470A1C003800
+0000000000004445
+0000000000004446
+0004A30B001A4444
+3933383367348503
+3933383355348303
+313647092E003000
+393338335B348303
+
+1.2 create a new device different from the exist device:
+3136470a1c003800
+3136470A1D003E00
+313647092e003000
+
+new device for test:
+3933383351348303
+{
+    "devEUI" : "3933383351348303",
+    "devType" : "streetlight",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+1.3 edit the new device devicetype and make the test, different devicetype will return different results:
+{
+    "_id" : ObjectId("596ecdc4b1beaf3d735422b0"),
+    "devEUI" : "3933383351348303",
+    "devType" : "plugbase",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+http://localhost:8100/api/lora/streetlight/0000000000000001/currentstatus
+{"deviceStatuses":[{"devEUI":"3136470A1D003E00","status":"Off"},{"devEUI":"3136470A1C003800","status":"Off"},{"devEUI":"313647092E003000","status":"Off"}]}
+
+http://localhost:8100/api/lora/plugbase/0000000000000001/currentstatus
+{"deviceStatuses":[{"devEUI":"3933383351348303","status":null}]}
+
+1.4 firs test to see if we can get the record of this lora device?
+
+************************************************
+2017.07.19
+************************************************
+1.agts_lora_app_0000000000000001 > electricity_consumption contains these devEUI devices:
+[
+    "3933383367348503",
+    "3933383355348303",
+    "313647092E003000",
+    "3136470A1D003E00",
+    "3136470A1C003800"
+]
+
+need to add these two devices as plugbase for test:
+- 3933383367348503
+- 3933383355348303
+{
+    "devEUI" : "3933383367348503",
+    "devType" : "plugbase",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+
+2.agts_lora_app_0000000000000001 > body_sensor contains these devEUI devices:
+[
+    "3933383351348303",
+    "393338335B348303"
+]
+
+need to add these two devices as bodysensor for test:
+- 3933383351348303
+- 393338335B348303
+{
+    "devEUI" : "393338335B348303",
+    "devType" : "plugbase",
+    "devCmds" : [ 
+        {
+            "frontendCmd" : "turn_on",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 1",
+            "statusWillBe" : "On"
+        }, 
+        {
+            "frontendCmd" : "turn_off",
+            "backendEquivalentPart1" : "sys set dpinmode 3 o pp",
+            "backendEquivalentPart2" : "sys set dpinval 3 0",
+            "statusWillBe" : "Off"
+        }
+    ]
+}
+3.right now we only have these three devices devEUI in the device_info:
+[
+    "3933383351348303",
+    "3933383355348303",
+    "313647092E003000"
+]
+
+4.Modified the function feDeviceRoutingFuncs.getDeviceStatus, add a funtion to query according req.query.dev_eui
+            // if the req.query.dev_eui exist, then query the information for a specific device
+            if(dev_eui) {
+                for (i in resp.nodeSessions) {
+                    var devEUI = resp.nodeSessions[i].DevEUI.toString("hex").toUpperCase();
+                    var devInfoRecord = devInfoLookup[devEUI];
+                    // logger.debug("devInfoRecord =", devInfoRecord);
+                    if (devInfoRecord) {
+                        if (devInfoRecord.devType === req.params.devicetype && devInfoRecord.devEUI === req.query.dev_eui) {
+                            statuses.push({
+                                devEUI: devEUI,
+                                status: getSpecificDeviceStatus(resp.nodeSessions[i], devInfoRecord)
+                            });
+                        }
+                    } // Else skip
+                }
+            // if the req.query.dev_eui dosen't exist, query the information for the devices match the devicetype
+            }else {
+                for (i in resp.nodeSessions) {
+                    var devEUI = resp.nodeSessions[i].DevEUI.toString("hex").toUpperCase();
+                    var devInfoRecord = devInfoLookup[devEUI];
+                    // logger.debug("devInfoRecord =", devInfoRecord);
+                    if (devInfoRecord) {
+                        if (devInfoRecord.devType === req.params.devicetype) {
+                            statuses.push({
+                                devEUI: devEUI,
+                                status: getSpecificDeviceStatus(resp.nodeSessions[i], devInfoRecord)
+                            });
+                        }
+                    } // Else skip
+                }
+            }
+
+5.Modified the function getSpecificDeviceStatus to query the status according to devicetype
+        case "plugbase":
+            return getPlugbaseStatus(node, deviceInfo);
+
+6.Create a function to query the plugbase status
+function getPlugbaseStatus(plugbase, deviceInfo) {
+    /*
+     * A device's status starts out as "Unknown". Then, to determine the status, we check the
+     * current and previous MAC commands fields, and whether or not they've been processed yet.
+     */
+    
+    logger.debug("Getting status for plugbase:", plugbase.DevEUI.toString("hex").toUpperCase());
+    // var wasDelivered = (plugbase.HasUnencryptedMacCmdDelivered.toString("hex").toUpperCase() == "01") ? true : false;
+    var wasDelivered = (plugbase.HasUnencrytpedMacCmdDelivered.toString("hex").toUpperCase() == "01") ? true : false;
+    var hasCurrCmd = (plugbase.UnencryptedMacCmds.length > 0) ? true : false;
+    var currCmds = (hasCurrCmd) ? plugbase.UnencryptedMacCmds.split(';') : "" ;
+    var lastCurrCmd = (currCmds.length > 1) ? currCmds[currCmds.length - 2] : "";
+    var statusWillBe = "Unknown";
+    if(lastCurrCmd == deviceInfo.devCmds[0].backendEquivalentPart2)  // On
+        statusWillBe = deviceInfo.devCmds[0].statusWillBe;
+    if(lastCurrCmd == deviceInfo.devCmds[1].backendEquivalentPart2)  // Off
+        statusWillBe = deviceInfo.devCmds[1].statusWillBe;
+    
+    var hasPrevCmd = (plugbase.UnencryptedMacCmdsPrev.length > 0) ? true : false;
+    var prevCmds = (hasPrevCmd) ? plugbase.UnencryptedMacCmdsPrev.split(';') : "";
+    var lastPrevCmd = (prevCmds.length > 1) ? prevCmds[prevCmds.length - 2] : "";
+    var statusIs = "Unknown";
+    if(lastPrevCmd == deviceInfo.devCmds[0].backendEquivalentPart2)  // On
+        statusIs = deviceInfo.devCmds[0].statusWillBe;
+    if(lastPrevCmd == deviceInfo.devCmds[1].backendEquivalentPart2)  // Off
+        statusIs = deviceInfo.devCmds[1].statusWillBe;
+
+    if(wasDelivered) {
+        if(hasCurrCmd) {
+            return statusWillBe;
+        } else {
+            return (hasPrevCmd) ? statusIs : "Error";
+        }
+    } else { // I.e.: Delivered == "01"
+        return (hasCurrCmd) ? "Waiting" : "Off";
+    }
+}
+
+************************************************
+2017.07.19
+************************************************
+1.Create a function to query the data of body_sensor, it is similar with plug_base
+1.1 use the same webapi as plugbase in api.js
+router.get("/lora/:devicetype/:application_id/latest_usage", frontendDeviceFuncs.getDeviceConsumption);
+
+2.How to install a software under ubuntu?
+wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+sudo tar -xzf postman.tar.gz -C /opt
+rm postman.tar.gz
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+
+************************************************
+2017.07.20
+************************************************
+1.Nodejs nodemailer:
+1.1 install nodejs nodemailer
+
+************************************************
+2017.07.21
+************************************************
+
+************************************************
+2017.07.24
+************************************************
+1.Create two web api for recent_usage of plugbase and body sensor:
+1.1[plugbase]create a webapi in api.js file.
+1.2[plugbase]develop function feDeviceRoutingFuncs.getDeviceRecentUsage, its logic is the same as feDeviceRoutingFuncs.getDeviceConsumption;
+             a.find device in the device_info table;
+			 b.judge if the devEUI exist;
+			 c.judge if the devicetype correct;
+			 d.if everything correct, then invoke the function getSpecificDeviceRecentUsage;
+1.3[plugbase]develop function getSpecificDeviceRecentUsage, its logic is the same as getSpecificDeviceRecentUsage, the only differences are query condition change, add recent query condition;
+
+2.Summarise the work:
+2.1[summary]how to design dashboard card & table;[could done]
+2.2[summary]how to fix the datatable bug;[could done]
+2.3[summary]how to deal with sidebar problem;
+2.4[summary]how to install ubuntu & node server;[could done]
+2.5[summary]how to design webapi;[could done]
+2.6[summary]how to design unit test;
+2.7[summary]how to release the test environment & prod environment;[could done]
+
+3.[git tips]Ignore the untracked file in git
+https://stackoverflow.com/questions/11542687/git-how-to-ignore-all-present-untracked-files
+git status -uno  # must be "-uno" , not "-u no"
+git status --porcelain | grep '^??' | cut -c4- >> .gitignore
+
+Another method:
+if you don't need this file, just rm -rf <file>, then you will ignore it with git status
+rm -rf <file>
+
+4.[javascript tips]how to get several minutes ago date and several seconds date?
+http://www.w3school.com.cn/jsref/jsref_obj_date.asp
+
+let now = new Date(Date.now());
+////////////////////////////////////////
+//      GET XMIN AGO
+////////////////////////////////////////
+let howLongAgoMin = 60;
+let xMinAgo = new Date(now);
+xMinAgo.setMinutes(xMinAgo.getMinutes() - howLongAgoMin);
+console.log("Hour: " + xMinAgo.getHours() + " Minute: " + xMinAgo.getMinutes());
+
+////////////////////////////////////////
+//      GET XSEC AGO
+////////////////////////////////////////
+let howLongAgoSec = 3600;
+let xSecAgo = new Date(now);
+xSecAgo.setSeconds(xSecAgo.getSeconds() - howLongAgoSec);
+console.log("Hour: " + xSecAgo.getHours() + " Minute: " + xSecAgo.getMinutes() + " Second: " + xSecAgo.getSeconds());
+
+5.[linux tips]12 Useful “df” Commands to Check Disk Space in Linux
+https://www.tecmint.com/how-to-check-disk-space-in-linux/
+df
+df -h
+
+************************************************
+2017.07.31
+************************************************
+1.[#207]Check device info in gw_serv & app_serv, disply device info only when it exist in both of two table.
+devicetable.controller.js > initTable() > initLoaraDevices() > dataFactory.getLoraDevicesCount(appIDRange)
+
+1.1 devlop:
+
+1.2 Unit Test:
+dataFactory.getLoraDevFromGwSession()
+
+************************************************
+2017.08.04
+************************************************
+1.[#245]Fix the device table delete item bug?
+
+2.[Linux tips]How to find a process and kill it under linux?
+[web blog]http://blog.csdn.net/zhshow/article/details/6042338
+ps aux | grep [process name]
+kill [process pid]
+
+************************************************
+2017.08.08
+************************************************
+1.[#217]Read the "hasParsedData" field in each second, return error message / null if no parsed data?
+1.1 Connect to Evan's local database to create a test enviroment?
+
+-config.environment = "test";
++config.environment = "local";^M
+ 
+-config.runApeSimulator = true;
++config.runApeSimulator = false;^M
+ config.runApeSimOn = 1; // Here, 1 == run APE record simulator on scenario 1, i.e.: data_loc_1 / data_loc_1_test
+ 
+ config.currVersion = "v0.0.3";
+@@ -26,7 +26,7 @@ config.acceptedEnvironments = [
+ ];
+ if(config.environment === "local") {
+     config.serverHost = "localhost";
+-    config.dbServer = "localhost:27017";
++    config.dbServer = "10.10.10.220:27017";^M
+
+nodemon --debug app.js
+
+
+************************************************
+2017.08.09
+************************************************
+1.[Javascript tips]How to calculate the diff between two Date in minutes?
+function averagesPushNull(averages, average, timestamp1, timestamp2) {
+    let time1 = timestamp1.getTime();
+    let time2 = timestamp2.getTime();
+    let timediff = (time1 - time2) / 60000;
+    // console.log(time1);
+    // console.log(time2);
+    // console.log(timediff);
+    let insertNullNum = timediff - 1;
+    for (let i = 0; i < insertNullNum; i++) {
+        averages.push(null);
+    }
+    averages.push(average);
+}
+
+2.[Javascript tips]How to iteration the javascript object?
+var zhangsan={}
+zhangsan.name = "张三";
+zhangsan.sex = "男";
+zhangsan.say = function(){
+        return "嗨！大家好，我来了。";
+    }
+zhangsan.contact = {
+    tel : "029-81895644",
+    qq : "1370753465",
+    email : "itxueyuan@gmail.com"
+}
+var strTem="";  // 临时变量
+for(value in zhangsan){
+   strTem+=value+'：'+zhangsan[value]+"\n";
+}
+alert(strTem);
+
+
+3.Nginx修改
+server {
+
+       location / {
+               root /home/appropolis-map/appropolis_map/dist;
+               try_files $uri $uri/ /index.html =404;
+       }
+
+       location /map {
+               root /home/appropolis-map/appropolis_map/dist;
+               try_files $uri $uri/ /index.html =404;
+       }
+
+       location /assets {
+               alias /home/appropolis-map/appropolis_map/dist/assets/;
+       }
+
+       location /app {
+               alias /home/appropolis-map/appropolis_map/dist/app/;
+       }
+
+}
+
+************************************************
+2017.08.11
+************************************************
+1.[#239]Fix street lamp error in map view?
+timer.service.js: this.initStatusCheck = function (self, currentScenarioConfig) {} > self.initCheckLightStatus = window.setInterval(function () {}
+Add:
+      if (typeof self.view.streetLampLayer === 'undefined' || !self.view.streetLampLayer) {
+        for (let i = 0; i < self.view.map.allLayers.items.length; i++) {
+          if (currentScenarioConfig.actionLayers.LoraLampOnOff.indexOf(self.view.map.allLayers.items[i].title) > -1) {
+            self.view.streetLampLayer = self.view.map.allLayers.items[i];
+            break;
+          }
+        }
+      }
+
+The problem point to this function, but I think the latest code have already check the 'undefined' issue, so it shouldn't reproduce this issue again.
+
+2.[javascript tips]How to determine an object is undefined or not?
+//////////////////////////////////////////////////////////////
+//How to determine a javascript object is undefined and null
+//////////////////////////////////////////////////////////////
+let obj1; //obj1 is undefined
+//method 1: typeof obj1 === 'undefined'
+if(typeof obj1 === 'undefined'){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+//method 2: !obj1
+if(!obj1){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+
+let obj2 = null;
+if(typeof obj2 === 'undefined'){
+  console.log('undefined!');
+}else{
+  console.log('defined!');
+}
+
+if(!obj1){
+  console.log('null');
+}else{
+  console.log('not null');
+}
+
+//结论,typeof obj === 'undefined'可以用来判断'undefined', !obj可以用来判断'undefined'以及'null'
+
+
+3.[angularjs tips]Angularjs binding?
+http://www.angularjs.cn/A0a6
+$scope.$watch
+$scope.$digest
+$scope.$apply
+
+4.[#240]Fix nodeList undefined bug in 3D view?
+nodeList initialization, sceneViewController.js: nodeListFactory.getNodeList(self);
+Before:
+     dataFactory.getActiveNodes().then(function (data) {
+      controller.nodeList = [];
+       let index = 0;
+       data.activeNodes.forEach(function (element) {
+         let node = {
+controller.nodeList = [] defined in the async promise.then() function, if we cannot get the data immediately, controller maybe undefined.
+
+After:
++    controller.nodeList = [];
+     dataFactory.getActiveNodes().then(function (data) {
+       let index = 0;
+       data.activeNodes.forEach(function (element) {
+         let node = {
+xin@xin-Lenovo-ideapad-F
+I move the controller.nodeList = [] outside the promise.then(), no matter we get the data from promise or not, controller.nodeList will be initialized.
+
+5.[linux tips]Server Memory Check?
+admin@AS8:~$ cat /proc/meminfo
+MemTotal:       16308132 kB
+MemFree:          337108 kB
+MemAvailable:    1826988 kB
+Buffers:          264068 kB
+Cached:          1452512 kB
+SwapCached:         2204 kB
+Active:         13624096 kB
+Inactive:        1980064 kB
+Active(anon):   12766788 kB
+Inactive(anon):  1160092 kB
+Active(file):     857308 kB
+Inactive(file):   819972 kB
+Unevictable:           8 kB
+Mlocked:               8 kB
+SwapTotal:      16654332 kB
+SwapFree:       16502008 kB
+Dirty:               724 kB
+Writeback:             0 kB
+AnonPages:      13885956 kB
+Mapped:            82556 kB
+Shmem:             39280 kB
+Slab:             189156 kB
+SReclaimable:     141092 kB
+SUnreclaim:        48064 kB
+KernelStack:       47952 kB
+PageTables:        49304 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    24808396 kB
+Committed_AS:   37213692 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1417216 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      127940 kB
+DirectMap2M:     9185280 kB
+DirectMap1G:     9437184 kB
+
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 3.0 present.
+
+Handle 0x0029, DMI type 16, 23 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: Multi-bit ECC
+	Maximum Capacity: 512 GB
+	Error Information Handle: Not Provided
+	Number Of Devices: 8
+
+Handle 0x0034, DMI type 16, 23 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: Multi-bit ECC
+	Maximum Capacity: 512 GB
+	Error Information Handle: Not Provided
+	Number Of Devices: 8
+
+************************************************
+2017.08.12
+************************************************
+1.[linux tips]How to check if the specific listening port have been used?
+lsof -i | grep 9002
+2.[linux tips]How to delete the process used the specific listening port?
+kill -9 $(netstat -tlnp|grep 9002|awk '{print $7}'|awk -F '/' '{print $1}')
+3.[git tips]How to cherry-pick the specific commit?
+git cherry-pick 99daed2
+
+************************************************
+2017.08.14
+************************************************
+1.[trello tips]Useful trello plugins?
+https://chrome.google.com/webstore/detail/card-colors-for-trello/nodlpencjjlohojddhflnahnfpfanbjm/related?hl=en
+
+https://chrome.google.com/webstore/detail/projects-for-trello/mholjhodapabhdbchonjjoecmfhobfoa/related?hl=en-GB
+
+https://chrome.google.com/webstore/detail/cardcounter-for-trello/miejdnaildjcmahbhmfngfdoficmkdhi/related?hl=en
+
+https://chrome.google.com/webstore/detail/trello-card-numbers/kadpkdielickimifpinkknemjdipghaf/related?hl=en
+chrome.google.com
+Card Colors for Trello
+Takes card label colors, either merge them or pick the first and add them to the entire card.
+ 
+chrome.google.com
+Projects for Trello
+Adds project labels to your Trello Boards
+ 
+chrome.google.com
+CardCounter for Trello
+Shows the number of cards in every list in Trello. Adds support for Kanban limits.
+ 
+chrome.google.com
+Trello Card Numbers
+Adds card numbers to a variety of places when using Trello.
+ 
+[4:46] 
+https://chrome.google.com/webstore/detail/slim-lists-for-trello/pjlejgbmijmafmobaofcgblpdbkaodod/related?hl=en
+chrome.google.com
+Slim Lists for Trello
+Shows you more lists in Trello by reducing the width of lists in Trello by up to 50%
+ 
+2.[linux tips]How to collect the server system info?
+xueyang [2:56 PM] 
+a.list all the system infomation:
+lspci
+
+lspci | egrep -i --color 'network|ethernet'
+
+lshw -class network
+
+b.list the route and gateway information:
+route -n
+
+c.list the cpu and memory information:
+cat /proc/cpuinfo
+cat /proc/meminfo
+
+d.list the harddisk information:
+hdparm -I /dev/sda
+
+lshw -class disk -class storage'
+
+e.list php information:
+php --version
+
+3.[#282]Fix the datatable popup cannot turn on/turn off bug?
+datatable popup turn on and turn off work flow:
+datatableController.js: onleftClick(row) --> dataTableService.parseRowData(name, dataMap) --> sceneViewController.js: $scope.$on("zoomToFeature", function (event, arg) -->
+SceneViewService.createNewDatatablePopup(Popup, longitude, latitude, devEUI, self) --> sceneViewController.js: initPopup()
+[solution] pass the devEUI to createNewDataTablePopup()
+
+esrimap popup turn on and turn off work flow:
+sceneViewController.js: self.view.on('click', function (evt) --> SceneViewService.createNewEsriPopup() --> sceneViewController.js: initPopup()
+
+4.[angularjs tips]Funtion parameters?
+function(arg1, arg2, arg3) === function(arg1, arg2, arg3, arg4) the same, if you didn't pass through the arg4 to function. It is set the default value: undefined.
+However, if you want to use function, you should pass more args to it. Less args will cause fault.
+
+************************************************
+2017.08.15
+************************************************
+1.[linux tips]How to check matherboard information?
+sudo dmidecode -t 2
+			
+2.[git tips]How to cherry-pick update the release branch?
+The keypoint is: use pull request to group the commit for each single isuue one time.
+So you can just cherry-pick the relevant commit in the PR.
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #272
+////////////////////////////////////////////////
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/87/diff
+* 08ed850 - (HEAD -> release-v1.0.0) [20170814 Xin Tu]#272 modification according to comment (3 minutes ago) <Xin>
+* ea12472 - [20170813 Xin Tu]#272 remove the datatable css from index.html (4 minutes ago) <tx4042001>
+* ad1bd73 - [20170813 Xin Tu]#272 Add jquery datatable css (4 minutes ago) <tx4042001>
+* 27d3a67 - [20170813 Xin Tu]#272 Fix the datatable not responsive problem, 0000000000004 swap to 000000000 (5 minutes ago) <tx4042001>
+* 6350b7e - [20170812 Xin Tu]Expand the displayLength and forwarding to devicetable page after editing (6 minutes ago) <Xin>
+
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #282
+////////////////////////////////////////////////
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/89/diff#site/app/3Dmap/index.js
+* 1dfdfd1 - (HEAD -> release-v1.0.0) [20170814 Xin Tu]#282 change the sceneViewService.initPopup back to initPopup (4 seconds ago) <Xin>
+* 1748768 - [20170814 Xin Tu]#282 modify according to gulp test (37 seconds ago) <Xin>
+* 90bfce3 - [20170814 Xin Tu]#282 move createNewDatatablePopup and createNewEsriPopup into sceneViewService (73 seconds ago) <Xin>
+* 0e88b16 - [20170814 Xin Tu]#282 refactor createNewPopup, separate it into createNewDataTablePopup and createNewEsriPopup (89 seconds ago) <Xin>
+* 90aaf6e - [20170814 Xin Tu]#282 fix the dataTable plugbase popup cannot turn on turn off issue (2 minutes ago) <Xin>
+
+////////////////////////////////////////////////
+// Cherry-pick all the commit for #271
+////////////////////////////////////////////////		 
+http://207.34.103.155:57990/projects/FRON/repos/appropolis_map/pull-requests/88/commits
+* 156afa7 - (HEAD -> release-v1.0.0) [Jinwen] Move AppID out of dataFactory.service.js. (7 seconds ago) <Jinwen Zhang>
+			 
+3.[git tips]How to roll back the unnecessary git add . and git commit -m ?
+3.1 rollback the git add .?
+git checkout .
+3.2 rollback the git commit -m ?
+git reset HEAD~  //remove the latest commit
+git reset
+git reset HEAD这条命令用来废除这次修改的记录，当前文件回到上一次提交的状态。
+git reset --hard [commit版本号]
+			 
+4.[javascript tips]How to determine whether a number is an integer?
+http://www.cnblogs.com/snandy/p/3824828.html
+二、使用Math.round、Math.ceil、Math.floor判断
+整数取整后还是等于自己。利用这个特性来判断是否是整数，Math.floor示例，如下
+function isInteger(obj) {
+    return Math.floor(obj) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+这个直接把字符串，true，[]屏蔽了，代码量比上一个函数还少。
+
+三、通过parseInt判断
+function isInteger(obj) {
+    return parseInt(obj, 10) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+很不错，但也有一个缺点
+
+isInteger(1000000000000000000000) // false
+竟然返回了false，没天理啊。原因是parseInt在解析整数之前强迫将第一个参数解析成字符串。这种方法将数字转换成整型不是一个好的选择。
+
+四、通过位运算判断
+function isInteger(obj) {
+    return (obj | 0) === obj
+}
+isInteger(3) // true
+isInteger(3.3) // false
+isInteger('') // false
+isInteger('3') // false
+isInteger(true) // false
+isInteger([]) // false
+这个函数很不错，效率还很高。但有个缺陷，上文提到过，位运算只能处理32位以内的数字，对于超过32位的无能为力，如
+
+isInteger(Math.pow(2, 32)) // 32位以上的数字返回false了
+当然，多数时候我们不会用到那么大的数字。
+
+五、ES6提供了Number.isInteger
+Number.isInteger(3) // true
+Number.isInteger(3.1) // false
+Number.isInteger('') // false
+Number.isInteger('3') // false
+Number.isInteger(true) // false
+Number.isInteger([]) // false
+
+5.[linux tips]How to check the system performance?
+http://www.infoq.com/cn/news/2015/12/linux-performance
+5.1 uptime
+$ uptime
+23:51:26 up 21:31,  1 user,  load average: 30.02, 26.43, 19.02
+这个命令可以快速查看机器的负载情况。在Linux系统中，这些数据表示等待CPU资源的进程和阻塞在不可中断IO进程（进程状态为D）的数量。这些数据可以让我们对系统资源使用有一个宏观的了解。
+
+5.2 dmesg | tail
+该命令会输出系统日志的最后10行。示例中的输出，可以看见一次内核的oom kill和一次TCP丢包。这些日志可以帮助排查性能问题。千万不要忘了这一步。
+
+5.3 vmstat 1
+vmstat(8) 命令，每行会输出一些系统核心指标，这些指标可以让我们更详细的了解系统状态。后面跟的参数1，表示每秒输出一次统计信息，表头提示了每一列的含义，这几介绍一些和性能调优相关的列：
+
+5.4 mpstat -P ALL 1
+该命令可以显示每个CPU的占用情况，如果有一个CPU占用率特别高，那么有可能是一个单线程应用程序引起的。
+
+5.5 pidstat 1
+pidstat命令输出进程的CPU占用率，该命令会持续输出，并且不会覆盖之前的数据，可以方便观察系统动态。
+
+5.6 iostat -xz 1
+iostat命令主要用于查看机器磁盘IO情况。
+
+5.7 free –m
+free命令可以查看系统内存的使用情况，-m参数表示按照兆字节展示。最后两列分别表示用于IO缓存的内存数，和用于文件系统页缓存的内存数.
+
+5.8 sar -n DEV 1
+sar命令在这里可以查看网络设备的吞吐率。在排查性能问题时，可以通过网络设备的吞吐量，判断网络设备是否已经饱和。
+
+5.9 sar -n TCP,ETCP 1
+sar命令在这里用于查看TCP连接状态.
+
+5.10 top
+top命令包含了前面好几个命令的检查的内容。比如系统负载情况（uptime）、系统内存使用情况（free）、系统CPU使用情况（vmstat）等。因此通过这个命令，可以相对全面的查看系统负载的来源.
+
+************************************************
+2017.08.16
+************************************************
+1.[linux tips]How to deal with serveral screen situation?
+if there are several screen with then same name, you cannot open one of them.
+you need use command to kill all of them and then log in to the screen.
+screen -r pid-tty.name
+screen -r map_esri
+
+2.[git tips]How to set a config of git log alias?
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+************************************************
+2017.08.17
+************************************************
+1.web api design procedure:
+1.1 design web api route:
+router.get("/get_devType_default_values",   loraDeviceRegFuncs.getDevTypeDefaultVal);
+router.get("/get_bandID_default_values",    loraDeviceRegFuncs.getBandIDDefaultVal);
+router.get("/lora_device/candidate_values", loraDeviceRegFuncs.getCandidateValues);
+		   
+1.2 design corresponding function and method:
+//single promise design
+deviceRegFuncs.getDevTypeDefaultVal = function (req, res, next) {
+    let DeviceType = require("../../models/deviceInfo.js")();
+    DeviceType.distinct("devType").exec((err, resp) => {
+        if (err) {
+            res.send({ error: err });
+        } else {
+            if (resp && resp.length !== 0) {
+                res.send({ defaultDevTypeValues: resp });
+            } else {
+                res.send("there is no device info in device_info table!");
+            }
+        }
+    });
+};
+
+deviceRegFuncs.getBandIDDefaultVal = function (req, res, next) {
+    let BandID = require("../../models/bandID.js")();
+    BandID.find({}).exec((err, resp) => {
+        if (err) {
+            res.send({ error: err });
+        } else {
+            if (resp && resp.length !== 0) {
+                res.send({ defaultBandIdValues: resp });
+            } else {
+                res.send("there is no bandID info in regional_band_map table!");
+            }
+        }
+    });
+};
+
+//promises array design
+deviceRegFuncs.getCandidateValues = function (req, res, next) {
+    let DeviceType = require("../../models/deviceInfo.js")();
+    let BandID = require("../../models/bandID.js")();
+    let DeviceTypePromise = DeviceType.distinct("devType").exec((err, resp) => {
+        return resp;
+    });
+    let BandIDPromise = BandID.find({}).exec((err, resp) => {
+        return resp;
+    });
+
+    let promises = [];
+    promises.push(DeviceTypePromise);
+    promises.push(BandIDPromise);
+
+    let promise = Promise.all(promises).then((response) => {
+        if (response && response.length !== 0) {
+            res.send({ 
+                cadidateValues: {
+                    DevType: response[0],
+                    BandID: response[1]
+                }
+            });
+        } else {
+            res.send("there is no device info and bandID info in database!");
+        }
+    });
+    return promise;
+}
+
+1.3 models design:
+var mongoose = require('mongoose');
+var Config = require("../config/config.js");
+
+var logger = require("../common/tracer.js");
+
+var devTypeSchema = new mongoose.Schema(
+    {
+        devEUI: String,
+        devType: String,
+        devCmds: [
+            {
+                frontendCmd: String,
+                backendEquivalentPart1: String,
+                backendEquivalentPart2: String,
+                statusWillBe: String
+            }
+        ]
+    },
+    {
+        collection: "device_info"
+    }
+);
+
+// devTypeSchema.index({ date: -1 });
+
+module.exports = function devTypeGetModel() {
+    var conn = require("../db/dbConnections.js")("SystemInfo");
+    logger.debug("DeviceType connection:\n\tname = " + conn.name + "\n\thost = " + conn.host + "\n\tport = " + conn.port);
+    return conn.model("DeviceType", devTypeSchema);
+};
+
+var mongoose = require('mongoose');
+var Config = require("../config/config.js");
+
+var logger = require("../common/tracer.js");
+
+var bandIDSchema = new mongoose.Schema(
+    {
+        bandID: Number,
+        bandName: String,
+    },
+    {
+        collection: "regional_band_map"
+    }
+);
+
+module.exports = function bandIDGetModel() {
+    var conn = require("../db/dbConnections.js")("SystemInfo");
+    logger.debug("BandID connection:\n\tname = " + conn.name + "\n\thost = " + conn.host + "\n\tport = " + conn.port);
+    return conn.model("BandID", bandIDSchema);
+};
+
+2.[python tipse]python environment deployment:
+http://www.runoob.com/python/python-install.html
+2.1 python 2.7.13 download:
+url:https://www.python.org/downloads/source/
+		   
+2.2 uncompress the tar.xz file:
+cd Downloads
+$xz -d Python-2.7.13.tar.xz
+$tar -xvf Python-2.7.13.tar
+
+2.3 run ./configure
+
+2.4 make
+
+2.5 sudo make install
+	
+2.6 set path:
+export PATH="$PATH:/usr/local/bin/python" or PATH="$PATH:/usr/local/bin/python"
+
+2.7 check the python version:
+python -V
+	
+3.[python tips]How to install pycharm IDE?
+https://confluence.jetbrains.com/display/PYH/Installing+PyCharm+on+Linux+according+to+FHS
+3.1 pycharm-community-2017.2.1.tar.gz
+3.2 sudo mv pycharm-community-2017.2.1.tar.gz /opt/
+3.3 cd /opt/
+3.4 sudo tar -xzvf /opt/pycharm-community-2017.2.1.tar.gz
+3.5 sudo rm pycharm-community-2017.2.1.tar.gz
+3.6 bin/pycharm.sh
+	
+4.[python tips]How to run python script?
+$ chmod +x test.py     # 脚本文件添加可执行权限
+$ ./test.py
+	
+************************************************
+2017.08.18
+************************************************	
+1.[c/c++ tips]How to install eclipse as the IDE for C/C++?
+1.1 Eclipse安装:
+http://blog.topspeedsnail.com/archives/4813
+1.2 Eclipse下CDT安装：
+http://blog.csdn.net/typa01_kk/article/details/49252513
+1.3 Eclipse Youtube安装视频：
+https://www.youtube.com/watch?v=3r5BWb_MUxA
+1.4 Eclipse安装完成问号图标：
+http://www.linuxdiyf.com/linux/24703.html
+vi .local/share/applications/eclipse.desktop
+		   
+[Desktop Entry]
+Name=Eclipse
+Type=Application
+Exec=/home/xin/eclipse/cpp-oxygen/eclipse/eclipse
+Terminal=false
+Icon=/home/xin/eclipse/cpp-oxygen/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse
+
+2.[python tips]How to install eclipse as the IDE for python?
+https://www.youtube.com/watch?v=NDFbXIiqT4o
+
+3.[python tips]How to embeded python in c?
+3.1 #include </usr/include/python2.7/Python.h>
+3.2 gcc _001_embededPyToC.c $(/usr/bin/python2.7-config --ldflags) -o main
+	
+4.[linux tips]How to searh which file include a head file and where is the head file for c?
+grep -R --include="*.*" "pythonrun.h" /usr/include
+locate pythonrun.h
+
+5.[c/c++ tips]python extended in other application?
+https://docs.python.org/2/extending/index.html
+
+create a python module instead of python file
+PYTHONPATH=. ./main multiply multiply 2 3
+
+6.交叉编译
+6.1 create a C projects under eclipse;
+6.2 create a python projects under eclipse;
+6.3 #include </usr/include/python2.7/Python.h> use absolute dir path to include Python.h head file
+6.4 create the c code and python code, python code should be module instead of single python.py file
+    create python module with eclipse
+6.5 copy the python module to the c code file, let them at the same folder
+6.6 compile the c code
+    gcc _001_EmbededPyToC.c $(/usr/bin/python2.7-config --ldflags) -o main
+6.7 call the executable file
+    PYTHONPATH=. ./main multiply multiply 2 3
+6.8 install numpy scipy:
+    sudo apt-get install python-numpy
+	sudo apt-get install python-scipy
+	sudo apt-get install python-matplotlib
+
+pip install --upgrade --force-reinstall numpy
+	
+************************************************
+2017.08.19
+************************************************	
+1.[python tips]How swap python2 to python3?
+1.1 uninstall python2
+sudo apt-get remove python
+1.2 install python3
+sudo apt-get install python3
+1.3 upgrade python2 to python3
+http://imshusheng.com/python/213.html
+python -V
+cd /usr/local/src/
+wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+tar -zxvf Python-3.5.1.tgz
+cd Python-3.5.1
+./configure --prefix=/usr/local/python3
+make && make install
+mv /usr/bin/python /usr/bin/python2.6.6
+ln -s /usr/local/python3/bin/python3  /usr/bin/python
+1.4 install pip3 and install numpy under python3
+apt install python3-pip
+pip3 install numpy
+1.5 install pip3 and install scipy under python3
+apt install python3-pip
+pip3 install numpy
+
+2.[python tips]How to include python3 in python script?
+#!/usr/bin/python3
+
+	
+
